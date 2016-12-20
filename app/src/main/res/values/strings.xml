@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidFirebaseRealtimeDatabaseSample</string>
+    <string name="modificar">Modificar</string>
+    <string name="mensaje">Mensaje</string>
+</resources>
