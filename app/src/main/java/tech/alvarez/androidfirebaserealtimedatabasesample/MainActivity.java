@@ -1,6 +1,7 @@
 package tech.alvarez.androidfirebaserealtimedatabasesample;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mensajeTextView = (TextView) findViewById(R.id.mensajeTextView);
-        mensajeEditText = (EditText) findViewById(R.id.mensajeEditText);
+        mensajeTextView = findViewById(R.id.mensajeTextView);
+        mensajeEditText = findViewById(R.id.mensajeEditText);
     }
 
     @Override
@@ -35,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
         mensajeRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
                 mensajeTextView.setText(value);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
